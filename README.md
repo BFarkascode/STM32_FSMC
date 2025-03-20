@@ -98,7 +98,7 @@ CTP reset on PF12: GPIO output to reset the touch sensor.
 ### Getting the ST7789 and FT6x06 libraries to work
 To be fair, there isn’t much to say about the ST-provided library for the ST7789. It works perfectly well, albeit it does configure the screen to a certain setup without any function written to it change them. At any rate, any kind of modification to the driver is done by calling the “LCD_IO_WriteReg()” with the register address and then the “LCD_IO_WriteData()” with the data to be sent over, technically the same as sending image data over to the driver IC.
 
-### A few words on the I2C using F4xx
+### A few words on I2C within the F4xx family
 Until this very moment, I hardly needed I2C to work on an F4xx device. Even when I did use it – like in the digicam project - I simply set the I2C and its clocking (different compared to the L0xx!!!), wrote a crude I2C Tx and went on to focus on more important (and interesting) matters. Well, for this project, I had to remedy that issue and write a fully functioning I2C driver for the F4xx using bare metal.
 
 I don’t want to beat around the bush, I have simply cloned the HAL solution using bare metal coding. Why? Because for the life of me I could not get a hang of the convoluted flag system the peripheral is using on Rx, how they are set and when (see section 24.3.3 in the F412 refman). In a nutshell, one must set the peripheral before a transmission occurs and that setup MUST occur well ahead of time (2 bytes or so), otherwise the appropriate START/ACK/NACK/STOP signals will not be generated on the bus when doing Rx (Tx, on the other hand, is completely straight-forward, so that’s that). Mind, this was automatically dealt with when running I2C in an L0xx.
