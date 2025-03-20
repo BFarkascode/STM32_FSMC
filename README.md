@@ -66,6 +66,7 @@ Many of the findings we had for the original digicam project are worth checking 
 
 ## To read
 I am going through the related ControllersTech project’s first two parts without using HAL: 
+
 https://controllerstech.com/stm32-fmc-how-to-configure-for-lcd/
 
 ## Particularities
