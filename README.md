@@ -117,5 +117,5 @@ The second wipes the screen and allows the user to draw on it with one finger. W
 ## Conclusion
 This was an interesting and fun little project that has managed to provide me some tools to bypass the issues I have had with the digicam project.
 
-OF note, the F412ZG does not have a DCMI driver so it cannot be used to replace the F429ZI used in the digicam project.
+Of note, the F412ZG does not have a DCMI driver so it cannot be used to replace the F429ZI used in the digicam project.
 
